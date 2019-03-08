@@ -1,5 +1,13 @@
 ## MNIST Flask
 ![image](https://github.com/johnli-zr/mnist-flask/blob/master/ezgif-4-97402aa376b6.gif)
+
+Highlights:
+1. We use Keras with a TensorFlow backend to train a small 8 layer CNN to recognize handwritten character digits.
+2. We then save the model structure to a json file and weights to a h5 file.
+3. We use Flask to load the model and to predict the input handwritten character digits.
+4. We save all the input data and output data Casandra.
+
+
 ### 运行方式：
 #### 一、运行app.py
  1.本地运行
