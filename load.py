@@ -12,7 +12,6 @@ def init():
     loaded_model_json = json_file.read()
     json_file.close()
     model = model_from_json(loaded_model_json)
-    #将 woeights 载入 model 中
     model.load_weights("modelWeights.h5")
     #compile and evaluate loaded model
     model.compile(loss='categorical_crossentropy',optimizer='adam',metrics=['accuracy'])
