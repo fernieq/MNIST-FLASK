@@ -1,4 +1,5 @@
-## MNIST Flask
+## MNIST Flask Demo:
+
 ![image](https://github.com/johnli-zr/mnist-flask/blob/master/ezgif-4-97402aa376b6.gif)
 
 Highlights:
