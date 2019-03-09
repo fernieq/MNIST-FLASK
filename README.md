@@ -10,7 +10,7 @@ Highlights:
 5. We use HTML to help display the whole process.
 
 
-### How to run the application：
+### 1. How to run the application：
 ### We Use Docker! :)
 
 1⃣️Install Docker: https://docs.docker.com/install/overview/
