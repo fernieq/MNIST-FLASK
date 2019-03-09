@@ -9,38 +9,21 @@ Highlights:
 5. We use HTML to help display the whole process.
 
 
-### 运行方式：
-#### 一、运行app.py
- 1.本地运行
- 
- 1⃣️安装必要的环境：
- 
- sudo pip install -r requirements.txt
- 
- 2⃣️运行：
- 
- python app.py
- 
- 2.虚拟环境
+### How to run the application：
+### We Use Docker! :)
 
-1⃣️下载virtualenv，并构建虚拟环境，见：https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/001432712108300322c61f256c74803b43bfd65c6f8d0d0000
+1⃣️Install Docker: https://docs.docker.com/install/overview/
 
-2⃣️进入虚拟环境后按照本地安装的步骤
+2⃣️Use the follwoing Docker command to build a base image
 
-3.使用docker
+	docker build -t IMAGE_NAME .
 
-1⃣️安装docker，docker入门见：https://docs.docker.com/install/overview/
+3⃣️Use the following Docker command to build a container and run the image
 
-2⃣️使用docker创建一个image
-
-docker build -t IMAGE_NAME .
-
-3⃣️运行该image
-
-docker run -d -p 4000:5000 IMAGE_NAME
+	docker run -d -p 4000:5000 IMAGE_NAME
 
 
-### 二、连接cassandra
+### 2. Connect to Apache Cassandra database:
 
 1⃣️运行cassandra（见：https://hub.docker.com/_/cassandra/
 
