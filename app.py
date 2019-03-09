@@ -1,4 +1,6 @@
-#该文件创建了一个flaskapp，用于构建web框架
+#import flask class
+#render the html template to display the web
+#request class to handle post/get methods
 from flask import Flask, render_template, request
 from scipy.misc import imsave, imread, imresize
 import numpy as np
@@ -11,7 +13,7 @@ import os
 #sys.path.append(os.path.abspath("."))
 from load import *
 
-###cassandra 相关的包
+#import cansandra packages to store the input and output data
 import logging
 import time
 import socket
@@ -58,8 +60,7 @@ except Exception as e:
 
 #############
 
-
-#model，graph 见load.py
+#init flask app
 app = Flask(__name__)
 global model, graph
 model, graph = init()
@@ -70,18 +71,22 @@ def index():
 
 @app.route('/predict/', methods=['GET','POST'])
 def predict():
-    #获取时间
+    #get the time
     uploadtime=time.strftime('%Y-%m-%d %H:%M:%S',time.localtime(time.time()))
     
-    # 通过画布获取用户画的图像
-    parseImage(request.get_data())
+    #whenever the predict method is called, we're going
+    #to input the user drawn character as an image into the model
+    #perform inference, and return the classification
+    #get the raw data format of the image
+    formatImage(request.get_data())
 
-    # 将图像进行转换
+    #read the image into memory
     x = imread('output.png', mode='L')
+    #compute a bit-wise inversion so black becomes white and vice versa
     x = np.invert(x)
+    #resize the image
     x = imresize(x,(28,28))
-
-    #调用模型
+    #convert to a 4D tensor to feed into our model
     x = x.reshape(1,28,28,1)
     with graph.as_default():
         out = model.predict(x)
@@ -94,8 +99,8 @@ def predict():
         session.execute("INSERT INTO mnist1(id, digits,upload_time) values(uuid(), %s, %s)",[ str(response) , uploadtime])
         return response
     
-def parseImage(imgData):
-    # 将画布转换为out.png输出
+def formatImage(imgData):
+    """Decode the input image to raw binary data and feed it into the graph"""
     imgstr = re.search(b'base64,(.*)', imgData).group(1)
     with open('output.png','wb') as output:
         output.write(base64.decodebytes(imgstr))
