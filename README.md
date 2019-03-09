@@ -6,6 +6,7 @@ Highlights:
 2. We then save the model structure to a json file and weights to a h5 file.
 3. We use Flask to load the model and to predict the input handwritten character digits.
 4. We save all the input data and output data Casandra.
+5. We use HTML to help display the whole process.
 
 
 ### 运行方式：
