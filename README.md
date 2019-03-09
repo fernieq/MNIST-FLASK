@@ -14,7 +14,7 @@ Highlights:
 
 1⃣️Install Docker: https://docs.docker.com/install/overview/
 
-2⃣️Use the follwoing Docker command to build a base image
+2⃣️Use the following Docker command to build a base image
 
 	docker build -t IMAGE_NAME .
 
