@@ -23,6 +23,8 @@ log.setLevel('INFO')
 handler = logging.StreamHandler()
 handler.setFormatter(logging.Formatter("%(asctime)s [%(levelname)s] %(name)s: %(message)s"))
 log.addHandler(handler)
+#from cassandra.cluster import Cluster
+#from cassandra.query import SimpleStatement
 from cassandra.cluster import Cluster
 from cassandra.query import SimpleStatement
 ######################
@@ -44,6 +46,7 @@ try:
     session.execute("use mnist_database")
     
     log.info("creating table...")
+    #we store the id number, input number, and the time of the input to a table called mnist1
     session.execute("""
         CREATE TABLE mnist1(
         id uuid,
