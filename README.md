@@ -32,6 +32,7 @@ Highlights:
 
 	docker run -it --link some-cassandra:cassandra --rm cassandra cqlsh cassandra
 
+Note: It is possible than when you run the above command, your terminal will tell you the following error: (Unable to connect to any servers). The reason is that the Cassandra container has not fully started yet. In order to solve the problem, you just simply re-type the same command and you should be able to connect to Cassandra from cqlsh.
 
 
 ### 3. Read data from Cassandra
