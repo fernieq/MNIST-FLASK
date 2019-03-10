@@ -24,7 +24,7 @@ Highlights:
 
 ### 2. Connect to Apache Cassandra database:
 
-1. Install and run Cassandra(download page: https://hub.docker.com/_/cassandra)
+1⃣️Install and run Cassandra(download page: https://hub.docker.com/_/cassandra)
 
 	docker run --name some-cassandra -p 9042:9042 -d cassandra:latest
 
