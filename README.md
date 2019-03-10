@@ -22,6 +22,14 @@ Highlights:
 	docker run -d -p 4000:5000 IMAGE_NAME
 
 
+Note: We can also run locally. To do that, simply run the following commands:
+
+	sudo pip install -r requirements.txt
+	python app.py
+	
+Then visit http://0.0.0.0:5000/# to see the result!
+
+
 ### 2. Connect to Apache Cassandra database:
 
 1⃣️Install and run Cassandra(download page: https://hub.docker.com/_/cassandra)
