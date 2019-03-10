@@ -28,6 +28,8 @@ Highlights:
 
 	docker run --name some-cassandra -p 9042:9042 -d cassandra:latest
 
+Note: Pay special attention to that we need to connect port 9042 from the container to a port from our local machine. In this case, we choose 9042 as well.
+
 2⃣️ Connect to Cassandra from cqlsh
 
 	docker run -it --link some-cassandra:cassandra --rm cassandra cqlsh cassandra
