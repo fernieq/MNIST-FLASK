@@ -28,7 +28,7 @@ Highlights:
 
 	docker run --name some-cassandra -p 9042:9042 -d cassandra:latest
 
-2⃣️ Connect the Cassandra with the Flask container
+2⃣️ Connect to Cassandra from cqlsh
 
 	docker run -it --link some-cassandra:cassandra --rm cassandra cqlsh cassandra
 
